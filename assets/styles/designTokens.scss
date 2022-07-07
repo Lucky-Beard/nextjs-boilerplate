@@ -1,0 +1,51 @@
+/* ============== DESIGN TOKENS ============== */
+
+/* ============ TYPOGRAPHY ============ */
+
+// globally accessable classes, referenced using className={`title`}
+.title {
+  font-family: $displayFont;
+  font-weight:600;
+  font-size: 3rem;
+  line-height: 3rem * 1.25;
+  transition: opacity $hover;
+
+  &.small {
+    font-size: 2.5rem;
+  }
+  &.large {
+    font-size: 3.5rem;
+  }
+  &.extra-large {
+    font-size: 4rem;
+  }
+  &.extra-large2 {
+    font-size: 5rem;
+  }
+  &.bold {
+    font-weight: bold;
+  }
+}
+
+.body {
+  font-family: $bodyFont;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1rem * 1.25;
+
+  &.small {
+    font-size: 1.25rem;
+  }
+  &.large {
+    font-size: 1.5rem;
+  }
+  &.extra-large {
+    font-size: 2rem;
+  }
+  &.extra-large2 {
+    font-size: 2.5rem;
+  }
+  &.bold {
+    font-weight: bold;
+  }
+}

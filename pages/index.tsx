@@ -1,12 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.scss'
+import styles from './index.module.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import { useAppSelector, useInterval, useAppDispatch } from '../hooks';
 import { selectLoading, setLoading } from '../store/example';
+import { useGetPokemonByNameQuery } from '../services/pokemon';
 const Home: NextPage = () => {
+  const { data, error, isLoading } = useGetPokemonByNameQuery('staryu')
 
   const loading = useAppSelector(selectLoading);
   const dispatch = useAppDispatch();
@@ -24,8 +26,8 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <h2>
-          {String(loading)}
+        <h2 className={`title`}>
+          {String(isLoading)} {data?.name ?? 'No pokemon'}
         </h2>
 
         <p className={styles.description}>

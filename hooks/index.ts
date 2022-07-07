@@ -34,10 +34,23 @@ export const useInterval = (callback: Function, delay: number) => {
   }, [callback])
   useEffect(() => {
     const handler = (...args: any) => savedCallback.current?.(...args)
-
     if (delay !== null) {
       const id = setInterval(handler, delay)
       return () => clearInterval(id)
+    }
+  }, [delay])
+}
+
+export const useTimeout = (callback: Function, delay: number) => {
+  const savedCallback = useRef<Function>()
+  useEffect(() => {
+    savedCallback.current = callback
+  }, [callback])
+  useEffect(() => {
+    const handler = (...args: any) => savedCallback.current?.(...args)
+    if (delay !== null) {
+      const id = setTimeout(handler, delay)
+      return () => clearTimeout(id)
     }
   }, [delay])
 }

@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background:$gradPrimary;
 }
 
 .footer {
@@ -19,6 +20,7 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+  box-shadow: $lightShadow;
 }
 
 .footer a {
