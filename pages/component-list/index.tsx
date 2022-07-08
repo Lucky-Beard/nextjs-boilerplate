@@ -1,10 +1,10 @@
 /* A PAGE DEDICATED FOR LISTING ALL COMPONENTS TO AVOID REDUNDANT COMPONENTS */
 
 
-import type { NextPage } from 'next'
-import styles from './index.module.scss'
+import type { NextPage } from 'next';
+import styles from './index.module.scss';
 
-const Home: NextPage = () => {
+const ComponentList: NextPage = () => {
 
     return (
         <div className={styles.container}>
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
                 This is a cool page
             </main>
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default ComponentList;

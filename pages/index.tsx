@@ -1,14 +1,16 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from './index.module.scss'
+import { NextPageWithLayout } from './_app';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from './index.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import { useAppSelector, useInterval, useAppDispatch } from '../hooks';
 import { selectLoading, setLoading } from '../store/example';
 import { useGetPokemonByNameQuery } from '../services/pokemon';
-const Home: NextPage = () => {
-  const { data, error, isLoading } = useGetPokemonByNameQuery('staryu')
+import Layout from '../layouts/default';
+
+const Home: NextPageWithLayout = () => {
+  const { data, error, isLoading } = useGetPokemonByNameQuery('staryu');
 
   const loading = useAppSelector(selectLoading);
   const dispatch = useAppDispatch();
@@ -26,7 +28,7 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <h2 className={`title`}>
+        <h2 className={'title'}>
           {String(isLoading)} {data?.name ?? 'No pokemon'}
         </h2>
 
@@ -79,7 +81,19 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+// layouts are added like this via the getLayout function, the Layout is returned
+// this structure allows for react to be aware of state and properly perform state updates
+Home.getLayout = function getLayout(page) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  );
+};
+
+export default Home;
+
+
