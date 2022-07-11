@@ -1,8 +1,13 @@
 import type { NextComponentType } from 'next';
 import styles from './index.module.scss';
 import Image from 'next/image';
-const Footer: NextComponentType = () => {
 
+interface Props {
+    // username: string;
+}
+
+const Footer: NextComponentType<Props> = (props) => {
+    
     return (
         <div className={styles.container}>
           

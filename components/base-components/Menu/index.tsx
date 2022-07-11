@@ -1,8 +1,11 @@
 import type { NextComponentType } from 'next';
 import styles from './index.module.scss';
 
-const Menu: NextComponentType = () => {
+interface Props {
+    // username: string;
+}
 
+const Menu: NextComponentType<Props> = (props) => {
     return (
         <div className={styles.container}>
             
