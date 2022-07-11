@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /component-list
+
+# Host
+Host: https://examplesite.com
+
+# Sitemaps
+Sitemap: https://examplesite.com/sitemap.xml

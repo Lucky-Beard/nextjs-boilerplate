@@ -1,11 +1,10 @@
-import type { NextComponentType } from 'next';
 import styles from './index.module.scss';
 
 interface Props {
     // username: string;
 }
 
-const Menu: NextComponentType<Props> = (props) => {
+const Menu: React.FC<Props> = (props) => {
     return (
         <div className={styles.container}>
             

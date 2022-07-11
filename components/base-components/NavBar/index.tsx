@@ -1,4 +1,3 @@
-import type { NextComponentType } from 'next';
 import styles from './index.module.scss';
 import Image from 'next/image';
 
@@ -6,7 +5,7 @@ interface Props {
     // username: string;
 }
 
-const NavBar: NextComponentType<Props> = (props) => {
+const NavBar: React.FC<Props> = (props) => {
     return (
         <div className={styles.container}>
            <Image className={styles['logo']} src="/vercel.svg" width={72} height={16} alt="company logo" />

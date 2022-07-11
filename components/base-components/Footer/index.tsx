@@ -6,8 +6,7 @@ interface Props {
     // username: string;
 }
 
-const Footer: NextComponentType<Props> = (props) => {
-    
+const Footer: React.FC<Props> = (props) => {
     return (
         <div className={styles.container}>
           
