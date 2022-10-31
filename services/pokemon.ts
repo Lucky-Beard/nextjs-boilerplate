@@ -2,6 +2,7 @@
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import type { Pokemon } from '../types/pokemon';
+import { FormDataType } from '../types/form-data';
 
 // Define a service using a base URL and expected endpoints
 export const pokemonApi = createApi({
@@ -10,6 +11,13 @@ export const pokemonApi = createApi({
   endpoints: (builder) => ({
     getPokemonByName: builder.query<Pokemon, string>({
       query: (name) => `/pokemon/${name}`
+    }),
+    postForm: builder.mutation<FormDataType, Partial<FormDataType>>({
+      query: (body) => ({
+        url: 'sometesturl',
+        method: 'POST',
+        body
+      })
     })
     // additional api queries can be added here
     // ...
@@ -18,4 +26,4 @@ export const pokemonApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetPokemonByNameQuery } = pokemonApi;
+export const { useGetPokemonByNameQuery, usePostFormMutation } = pokemonApi;
