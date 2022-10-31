@@ -1,14 +1,15 @@
 import type { NextComponentType } from 'next';
 import styles from './index.module.scss';
 import Image from 'next/image';
-
+import { useStyles } from '@/hooks/useStyles';
 interface Props {
-    // username: string;
 }
 
 const Footer: React.FC<Props> = (props) => {
+
+    const s = useStyles(styles);
     return (
-        <div className={styles.container}>
+        <div className={s('container')}>
           
         </div>
     );
