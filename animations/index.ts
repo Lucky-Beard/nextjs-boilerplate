@@ -61,3 +61,5 @@ export const rightFadeInReveal = {
   duration: defaultDuration,
   ease: defaultEase
 };
+
+// extend this list by adding your own predefined animations down here
