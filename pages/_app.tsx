@@ -7,6 +7,9 @@ import { Provider } from 'react-redux';
 import store from '../store/store';
 import { NextPage } from 'next';
 import { createContext, ReactElement, ReactNode, useRef } from 'react';
+import { gsap} from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -23,7 +26,7 @@ type AppPropsWithLayout = AppProps & {
 type AppContextType = {
   rootRef: React.RefObject<HTMLDivElement> | null;
 };
-const AppContext = createContext<AppContextType>({ rootRef: null });
+export const AppContext = createContext<AppContextType>({ rootRef: null });
 
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
