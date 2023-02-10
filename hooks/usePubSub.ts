@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-
+// TODO import React Context root ref instead of document.
 export const usePubSub = () => {
   const savedCallback = useRef<any>(null);
   const event = useRef<any>();
