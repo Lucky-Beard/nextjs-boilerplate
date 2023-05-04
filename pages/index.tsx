@@ -1,6 +1,6 @@
 import { NextPageWithLayout } from './_app';
 import SEOHead from '../components/SEOHead';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import styles from './index.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
