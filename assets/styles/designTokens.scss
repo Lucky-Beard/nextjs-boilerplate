@@ -5,7 +5,7 @@
 // globally accessable classes, referenced using className={`title`}
 .title {
   font-family: $displayFont;
-  font-weight:600;
+  font-weight: 600;
   font-size: 3rem;
   line-height: 3rem * 1.25;
   transition: opacity $hover;
@@ -47,5 +47,107 @@
   }
   &.bold {
     font-weight: bold;
+  }
+}
+
+.wrap {
+  white-space: pre-wrap;
+}
+
+.shadow {
+  &.light {
+    box-shadow: $lightShadow;
+  }
+}
+
+.divider {
+  height: 0.5px;
+  background-color: $colPrimary;
+  width: 100%;
+  max-width: 1440px;
+  opacity: 0.5;
+  margin: 0 auto;
+}
+
+.link {
+  color: $colPrimary;
+  transition: color 0.25s ease-in-out;
+  text-decoration: none;
+  &:hover {
+    color: $colPrimary;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.v-spacing {
+  margin-bottom: $verticalSpacing;
+  @media screen and (max-width: $tablet) {
+    margin-bottom: map-get($vsBreakPoints, $tablet);
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin-bottom: map-get($vsBreakPoints, $mobile);
+  }
+
+  @media screen and (max-width: $mobilePortrait) {
+    margin-bottom: map-get($vsBreakPoints, $mobilePortrait);
+  }
+}
+
+.h-spacing {
+  margin-left: $horizontalBleeds;
+  margin-right: $horizontalBleeds;
+
+  @media screen and (max-width: $tablet) {
+    margin-left: map-get($hsBreakPoints, $tablet);
+    margin-right: map-get($hsBreakPoints, $tablet);
+  }
+
+  @media screen and (max-width: $mobile) {
+    margin-left: map-get($hsBreakPoints, $mobile);
+    margin-right: map-get($hsBreakPoints, $mobile);
+  }
+
+  @media screen and (max-width: $mobilePortrait) {
+    margin-left: map-get($hsBreakPoints, $mobilePortrait);
+    margin-right: map-get($hsBreakPoints, $mobilePortrait);
+  }
+}
+
+// for keeping content spacing consistent on full width elements
+.h-spacing-fw {
+  padding-left: $horizontalBleeds;
+  padding-right: $horizontalBleeds;
+
+  @media screen and (max-width: $tablet) {
+    padding-left: map-get($hsBreakPoints, $tablet);
+    padding-right: map-get($hsBreakPoints, $tablet);
+  }
+
+  @media screen and (max-width: $mobile) {
+    padding-left: map-get($hsBreakPoints, $mobile);
+    padding-right: map-get($hsBreakPoints, $mobile);
+  }
+
+  @media screen and (max-width: $mobilePortrait) {
+    padding-left: map-get($hsBreakPoints, $mobilePortrait);
+    padding-right: map-get($hsBreakPoints, $mobilePortrait);
+  }
+}
+
+.centered {
+  text-align: center;
+}
+
+.buttons-container {
+  display: flex;
+  column-gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  &.centered {
+    justify-content: center;
   }
 }
