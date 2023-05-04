@@ -21,5 +21,38 @@ $bodyFont: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
 /* ======== Transitions ======== */
 $hover: 0.35s ease-out; // when using var, prefix with the property e.g. transition: opacity $hover;
 
+/* ======== layout ======== */
+$horizontalBleeds: 40px;
+$verticalSpacing: 160px;
+$maxWidth: 1250px;
+$navbarHeight: 100px;
+
+/* ======== Breakpoints ======== */
+$mobilePortrait: 478px;
+$mobile: 768px;
+$tablet: 990px;
+$desktop: 1280px;
+$desktopLarge: 1440px;
+$desktopExtraLarge: 1920px;
+
+/* ======== Sectional Spacing ======== */
+$hsBreakPoints: (
+  $mobilePortrait: 20px,
+  $mobile: 40px,
+  $tablet: 100px,
+  $desktop: 40px,
+  $desktopLarge: 40px,
+  $desktopExtraLarge: 40px
+);
+
+$vsBreakPoints: (
+  $mobilePortrait: 60px,
+  $mobile: 80px,
+  $tablet: 100px,
+  $desktop: 140px,
+  $desktopLarge: 140px,
+  $desktopExtraLarge: 140px
+);
+
 /* ============ CUSTOM VARIABLES ============ */
 // Define custom variables here...
