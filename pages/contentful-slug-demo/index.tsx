@@ -8,7 +8,7 @@ import { fetcher } from 'services/helpers';
 import useSWR from 'swr';
 
 const query = `query legalDocumentsCollectionQuery {
-  legalDocumentsCollection {
+legalDocumentsCollection {
     items {
       name
       slug

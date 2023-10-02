@@ -17,9 +17,7 @@ async function fetchGraphQL(query: string, preview = false): Promise<any> {
   ).then((response) => response.json());
 }
 
-export async function exampleWithSlugQuery(
-  slug: string | null
-): Promise<any> {
+export async function exampleWithSlugQuery(slug: string | null): Promise<any> {
   const data = await fetchGraphQL(
     `query investorRelationsCollectionQuery {
       investorRelationsCollection(where: { slug: "${slug}", limit: 1)
@@ -45,6 +43,7 @@ export async function exampleWithSlugQuery(
       }
     }`
   );
+
   return data?.data?.investorRelationsCollection?.items?.[0];
 }
 
