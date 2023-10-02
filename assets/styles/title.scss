@@ -1,0 +1,74 @@
+$titleSizeIncrements: 12px;
+$titleSizeXl: $titleSizeIncrements * 6;
+$titleSizeL: $titleSizeIncrements * 5;
+$titleSizeM: $titleSizeIncrements * 4;
+$titleSizeS: $titleSizeIncrements * 3;
+$titleSizeSx: $titleSizeIncrements * 2;
+
+// How to use:
+// className="title-xl" or
+// className="title" for "Title/Medium"
+@mixin title-m {
+  letter-spacing: -0.48px;
+  font-size: $titleSizeM;
+  line-height: 125%;
+  font-weight: 500;
+}
+
+@mixin titles {
+  &-xl {
+    letter-spacing: -1.44px;
+    font-size: $titleSizeXl;
+  }
+
+  &-m {
+    @include title-m;
+  }
+
+  &-l {
+    font-size: $titleSizeL;
+    letter-spacing: -1.2px;
+    line-height: 130%;
+  }
+
+  &-s {
+    letter-spacing: -0.36px;
+    font-size: $titleSizeS;
+    line-height: 122%;
+  }
+
+  &-xs {
+    font-size: $titleSizeSx;
+    letter-spacing: -0.48px;
+    line-height: 32px;
+    display: block;
+  }
+}
+
+// className="title-s"
+.title {
+  @include title-m;
+  font-family: $bodyFont;
+
+  strong,
+  &.bold {
+    font-weight: 700;
+  }
+
+  &-xl,
+  &-l,
+  &-m,
+  &-s,
+  &-xs {
+    @extend .title;
+  }
+
+  @include titles;
+}
+
+// className="title-md-s"
+.title-md {
+  @media screen and (max-width: $tablet) {
+    @include titles;
+  }
+}

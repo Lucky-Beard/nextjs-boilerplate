@@ -1,0 +1,92 @@
+$increments: 2px;
+$bodySizeXl: 24px;
+$bodySizeL: $bodySizeXl - ($increments * 2);
+$bodySizeM: $bodySizeL - $increments;
+$bodySizeS: $bodySizeM - $increments;
+$bodySizeSx: $bodySizeS - $increments;
+
+body {
+  background-color: $stone-grey-100;
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+  font-family: $bodyFont;
+  line-height: 160%;
+  font-size: 18px;
+}
+
+@mixin body-sizes {
+  &-xl {
+    line-height: 140%;
+    font-size: $bodySizeXl;
+
+    @media screen and (max-width: $tablet) {
+      font-size: $bodySizeL;
+    }
+  }
+
+  &-l {
+    line-height: 160%;
+    font-size: $bodySizeL;
+  }
+
+  &-m {
+    font-size: $bodySizeM;
+
+    strong,
+    &.bold {
+      font-weight: 700;
+    }
+  }
+
+  &-s {
+    letter-spacing: -0.16px;
+    font-size: $bodySizeS;
+    line-height: 160%;
+    font-weight: 300;
+  }
+
+  &-xs {
+    font-size: $bodySizeSx;
+    line-height: 160%;
+    font-weight: 500;
+  }
+}
+
+// How to use:
+// className="body-xl" or
+// className="body" for "Body/Medium"
+.body {
+  font-family: $bodyFont;
+  font-size: $bodySizeM;
+  line-height: 160%;
+  font-weight: 400;
+
+  strong,
+  &.bold {
+    font-weight: 700;
+  }
+
+  &-xl,
+  &-l,
+  &-m,
+  &-s,
+  &-xs {
+    @extend .body;
+  }
+
+  &-xl,
+  &-l {
+    strong,
+    &.bold {
+      font-weight: 600;
+    }
+  }
+
+  @include body-sizes;
+}
+
+.body-md {
+  @media screen and (max-width: $tablet) {
+    @include body-sizes;
+  }
+}

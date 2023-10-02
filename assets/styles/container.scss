@@ -1,0 +1,93 @@
+.container {
+  padding-right: $mobileBleeds;
+  padding-left: $mobileBleeds;
+  max-width: $maxWidth;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .fullscreen-padded {
+    @media (max-width: $desktop) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.container-wide {
+  @extend .container;
+  max-width: $maxWidth + ($xlSpacing * 2) + ($smSpacing * 2);
+}
+
+.container-wide-large {
+  @extend .container;
+  max-width: $desktopLarge;
+}
+
+.fullscreen {
+  @media (min-width: ($desktop + 1px)) {
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+  }
+}
+
+$padded-container: $mdSpacing + $xxsSpacing;
+
+.fullscreen-padded {
+  @extend .fullscreen;
+  padding-right: $mobileBleeds;
+  padding-left: $mobileBleeds;
+
+  @media (min-width: ($desktop + 1px)) {
+    margin-left: calc(-50vw + $mobileBleeds);
+    width: calc(100vw - ($mobileBleeds * 2));
+    padding-right: $mobileBleeds;
+    padding-left: $mobileBleeds;
+
+    .container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.halfscreen-left-padded,
+.halfscreen-right-padded {
+  position: relative;
+  width: 50vw;
+}
+
+.halfscreen-right-padded {
+  padding-right: $padded-container;
+  margin-right: -50vw;
+  left: 50%;
+
+  @media (max-width: $desktop) {
+    padding-right: $mobileBleeds;
+
+    .container {
+      padding-right: 0;
+    }
+  }
+}
+
+.halfscreen-left-padded {
+  padding-left: $padded-container;
+  margin-left: -50vw;
+  right: 50%;
+
+  @media (max-width: $desktop) {
+    padding-left: $mobileBleeds;
+
+    .container {
+      padding-left: 0;
+    }
+  }
+}

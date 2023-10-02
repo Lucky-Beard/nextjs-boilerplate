@@ -18,6 +18,31 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Contentful CMS Integration
+
+1. Install global dependencies
+
+https://www.contentful.com/developers/docs/tutorials/general/get-started/
+
+Install the Gatsby CLI tool by running `npm install -g gatsby-cli`
+
+2. Run the following terminal command:
+
+`npm install @contentful/rich-text-html-renderer @contentful/rich-text-react-renderer @contentful/rich-text-types contentful contentful-import`
+
+3. Create 3 .env files:
+
+**.env.local**
+
+```env
+NEXT_PUBLIC_CONTENTFUL_SPACE_ID=...
+NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=...
+NEXT_PUBLIC_CONTENTFUL_PREVIEW_ACCESS_TOKEN=...
+NEXT_PUBLIC_CONTENTFUL_PREVIEW_SECRET=...
+NEXT_PUBLIC_CONTENTFUL_REVAILDATE_SECRET=...
+SITE_URL=http://localhost:3000
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

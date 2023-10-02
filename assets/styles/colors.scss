@@ -1,0 +1,174 @@
+/* ======== Primary Colours ======== */
+
+// Burstone Blue
+$burstone-100: #cbdcff;
+$burstone-200: #98b8ff;
+$burstone-300: #6495ff;
+$burstone-400: #3072ff;
+$burstone-500: #0050fc;
+$burstone-600: #003fc8;
+$burstone-700: #002f95;
+$burstone-800: #081f53;
+$burstone-900: #00123a;
+
+// Tech Turquoise
+$tech-turquoise-100: #eaf7fa;
+$tech-turquoise-200: #bfe7ef;
+$tech-turquoise-300: #95d8e4;
+$tech-turquoise-400: #6bc8da;
+$tech-turquoise-500: #2bb0ca;
+$tech-turquoise-600: #228ca2;
+$tech-turquoise-700: #1a6979;
+$tech-turquoise-800: #114651;
+$tech-turquoise-900: #092328;
+
+// Electric Blue
+$electric-blue-100: #d7f0fb;
+$electric-blue-200: #aee2f6;
+$electric-blue-300: #86d3f2;
+$electric-blue-400: #5dc4ed;
+$electric-blue-500: #33b5e8;
+$electric-blue-600: #179ace;
+$electric-blue-700: #11799a;
+$electric-blue-800: #0b4d67;
+$electric-blue-900: #062633;
+
+/* ======== Secondary Colours ======== */
+
+// Stone Gray
+$stone-grey-100: #f9f9f8;
+$stone-grey-200: #edeceb;
+$stone-grey-300: #e2e0dd;
+$stone-grey-400: #d0cdc9;
+$stone-grey-500: #b3aea8;
+$stone-grey-600: #938c83;
+$stone-grey-700: #6f6961;
+$stone-grey-800: #4a4641;
+$stone-grey-900: #151312;
+
+// Eco Green
+$eco-green-100: #e7ffb8;
+$eco-green-200: #cfff70;
+$eco-green-300: #b8ff29;
+$eco-green-400: #96e000;
+$eco-green-500: #7fbd00;
+$eco-green-600: #659700;
+$eco-green-700: #4b7100;
+$eco-green-800: #324b00;
+$eco-green-900: #192600;
+
+// Royal Purple
+$royal-purple-100: #dfdbed;
+$royal-purple-200: #c0b7db;
+$royal-purple-300: #a092c9;
+$royal-purple-400: #806eb8;
+$royal-purple-500: #634fa2;
+$royal-purple-600: #503f80;
+$royal-purple-700: #3c2f60;
+$royal-purple-800: #282040;
+$royal-purple-900: #141020;
+
+/* ======== Neutrals ======== */
+$white: #fff;
+$grey-1: #1d1d1f;
+$grey-2: #4a4a4e;
+$grey-3: #3d3d43;
+$grey-4: #928e85;
+
+// Names used in the design
+$neutrals-white: $white;
+$neutrals-grey-1: $grey-1;
+$neutrals-grey-2: $grey-2;
+$neutrals-grey-3: $grey-3;
+
+/* ======== Status ======== */
+
+// Error
+$error-100: #fecdca;
+$error-200: #fecdca;
+$error-300: #fda29b;
+$error-400: #f97066;
+$error-500: #f04438;
+$error-600: #d92d20;
+$error-700: #b42318;
+$error-800: #912018;
+$error-900: #7a271a;
+
+// Warning
+$warning-100: #fef0c7;
+$warning-200: #fedf89;
+$warning-300: #fec84b;
+$warning-400: #fdb022;
+$warning-500: #f79009;
+$warning-600: #dc6803;
+$warning-700: #b54708;
+$warning-800: #93370d;
+$warning-900: #7a2e0e;
+
+// Success
+$success-100: #d1fadf;
+$success-200: #a6f4c5;
+$success-300: #6ce9a6;
+$success-400: #32d583;
+$success-500: #12b76a;
+$success-600: #039855;
+$success-700: #027a48;
+$success-800: #05603a;
+$success-900: #054f31;
+
+/* ======== Opacity ======== */
+$opacity-stone-05: rgba($stone-grey-500, 0.25);
+$opacity-burstone-05: rgba($burstone-500, 0.25);
+$opacity-turquoise-05: rgba($tech-turquoise-500, 0.25);
+$opacity-electric-blue-05: rgba($electric-blue-500, 0.25);
+$opacity-eco-green-05: rgba($eco-green-500, 0.25);
+$opacity-royal-purple-05: rgba($royal-purple-500, 0.25);
+$opacity-white-05: rgba($white, 0.25);
+
+$opacity-stone-01: rgba($stone-grey-100, 0.1);
+$opacity-burstone-01: rgba($burstone-100, 0.1);
+$opacity-turquoise-01: rgba($tech-turquoise-100, 0.1);
+$opacity-electric-blue-01: rgba($electric-blue-100, 0.1);
+$opacity-eco-green-01: rgba($eco-green-100, 0.1);
+$opacity-white-01: rgba($white, 0.1);
+
+/* ======== Theme ======== */
+$primary: $burstone-800;
+$secondary: $tech-turquoise-800;
+
+/* ======== Gradients ======== */
+$gradient-burstone: radial-gradient(
+  176.83% 86% at 32.05% 88.11%,
+  $burstone-900 38.02%,
+  $burstone-800 97.24%
+);
+
+$gradient-burstone-purple: linear-gradient(
+  148deg,
+  rgba($burstone-800, 0.7) 27.71%,
+  $royal-purple-500 105.15%
+);
+
+$gradient-dark: linear-gradient(
+  62deg,
+  $burstone-900 -42.93%,
+  $burstone-800 83.08%
+);
+
+$gradiant-burstone-purple-light: linear-gradient(
+  158deg,
+  rgba(51, 50, 112, 0.72) -0.24%,
+  rgba(99, 79, 162, 0.8) 113.17%
+);
+
+$gradient-burstone-dark: linear-gradient(
+  147deg,
+  rgba(8, 31, 83, 0.8) 36.5%,
+  $royal-purple-500 113.35%
+);
+
+$gradient-burstone-dark-cards: radial-gradient(
+  237.54% 333.98% at -112.17% 289.85%,
+  $burstone-900 38.02%,
+  $burstone-800 97.24%
+);

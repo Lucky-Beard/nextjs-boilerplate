@@ -1,22 +1,17 @@
 /* Variables are prepended with sass configuration in next.config.js so
  that it's injected to all files, unlike imports on _app.tsx */
 
-/* ============ DESIGN TOKEN VARIABLES ============ */
-
-/* ======== Colours ======== */
-$colPrimary: #b16269;
-$colSecondary: #7d9fb4;
+@import './colors.scss';
 
 /* ======== Gradients ======== */
-$gradPrimary: linear-gradient(90deg, $colPrimary, $colSecondary);
+$gradPrimary: linear-gradient(90deg, $primary, $secondary);
 
 /* ======== Shadows ======== */
 $lightShadow: 4px 6px 8px 0px #00000014;
 
 /* ======== Fonts ======== */
-$displayFont: 'Times New Roman';
-$bodyFont: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$displayFont: 'Manrope', 'Calibri', 'Arial', sans-serif;
+$bodyFont: 'Manrope', 'Calibri', 'Arial', sans-serif;
 
 /* ======== Transitions ======== */
 $hover: 0.35s ease-out; // when using var, prefix with the property e.g. transition: opacity $hover;
@@ -24,14 +19,19 @@ $hover: 0.35s ease-out; // when using var, prefix with the property e.g. transit
 /* ======== layout ======== */
 $horizontalBleeds: 40px;
 $verticalSpacing: 160px;
-$maxWidth: 1250px;
+$mobileBleeds: 16px;
+$maxWidth: 1216px + $mobileBleeds + $mobileBleeds;
 $navbarHeight: 100px;
+$tabsHeight: 82px;
+$navGap: 56px;
+$radius: 40px;
 
 /* ======== Breakpoints ======== */
 $mobilePortrait: 478px;
 $mobile: 768px;
 $tablet: 990px;
-$desktop: 1280px;
+$laptop: 1080px;
+$desktop: $maxWidth;
 $desktopLarge: 1440px;
 $desktopExtraLarge: 1920px;
 
@@ -55,4 +55,20 @@ $vsBreakPoints: (
 );
 
 /* ============ CUSTOM VARIABLES ============ */
-// Define custom variables here...
+$blurredBackdrop: rgba($primary, 0.3);
+$transition: all 0.4s ease-in-out;
+
+// Spacing
+$xlSpacing: 80px;
+$lgSpacing: 40px;
+$mdSpacing: 24px;
+$smSpacing: 16px;
+$xsSpacing: 8px;
+
+$xxlSpacing: 160px;
+$xxsSpacing: 4px;
+
+$sectionSpacingXl: 136px;
+$sectionSpacingL: 128px;
+$sectionSpacingS: 32px;
+$sectionSpacing: 96px;
