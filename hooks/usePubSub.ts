@@ -18,7 +18,6 @@ export const usePubSub = () => {
 
   const removeListener = () => {
     if (savedCallback.current) {
-      console.log('Removing listener');
       document.removeEventListener(event.current, savedCallback.current);
       savedCallback.current = null;
     }

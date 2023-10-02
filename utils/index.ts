@@ -5,6 +5,19 @@ export const regEx: RegEx = {
   email: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 };
 
+export const NumberFormat = (number: any) => {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+
+export const DateFormat = (date: string) => {
+  let dateObj = new Date(date);
+
+  return dateObj.toLocaleString('default', {
+    day: '2-digit',
+    month: 'long'
+  });
+};
+
 export const ThreeColumnGrid: SxProps = {
   gridTemplateColumns: {
     xs: 'repeat(1, 1fr)',

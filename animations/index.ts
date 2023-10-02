@@ -14,11 +14,12 @@ export type ScrollRevealType = {
 };
 
 // a generic scroll config for all animations
-export const scrollTriggerRevealConfig = (trigger?: string) => {
+export const scrollTriggerRevealConfig = (trigger?: string | HTMLElement) => {
   return {
     trigger,
-    start: 'top 65%',
+    start: 'top 75%',
     toggleActions: 'play none none none',
+    // toggleActions: 'play none none reverse',
     markers: false
   };
 };
@@ -34,15 +35,45 @@ export const fadeReveal = {
   ease: defaultEase
 };
 
+export const rotateRevealLeft = {
+  rotation: 90,
+  transformOrigin: 'center center',
+  duration: defaultDuration,
+  ease: defaultEase
+};
+
+export const rotateRevealRight = {
+  rotation: -90,
+  transformOrigin: 'center center',
+  duration: defaultDuration,
+  delay: 0.3,
+  ease: defaultEase
+};
+
+export const rotateRevealRightSm = {
+  rotation: 45,
+  transformOrigin: 'top right',
+  duration: defaultDuration,
+  ease: defaultEase
+};
+
+export const rotateRevealLeftSm = {
+  rotation: -45,
+  transformOrigin: 'top left',
+  duration: defaultDuration,
+  delay: 0.3,
+  ease: defaultEase
+};
+
 export const scaleDownReveal = {
-  scale: 1.1,
+  y: -50,
   opacity: 0,
   duration: defaultDuration,
   ease: defaultEase
 };
 
 export const scaleUpReveal = {
-  scale: 0.9,
+  y: 50,
   opacity: 0,
   duration: defaultDuration,
   ease: defaultEase
@@ -50,14 +81,14 @@ export const scaleUpReveal = {
 
 export const leftFadeInReveal = {
   opacity: 0,
-  x: -50,
+  x: '-50%',
   duration: defaultDuration,
   ease: defaultEase
 };
 
 export const rightFadeInReveal = {
   opacity: 0,
-  x: 50,
+  x: '50%',
   duration: defaultDuration,
   ease: defaultEase
 };
