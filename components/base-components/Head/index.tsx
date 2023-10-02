@@ -25,11 +25,13 @@ const HeadSeo: React.FC<Props> = ({
       <meta name="keywords" content={keywords.join(', ')} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      {(preventIndexing || process.env.NEXT_ENVIRONMENT !== 'production') && (
+      {(preventIndexing ||
+        process.env.NEXT_PUBLIC_ENVIRONMENT !== 'production') && (
         <meta name="robots" content="noindex" />
       )}
 
-      {(preventIndexing || process.env.NEXT_ENVIRONMENT !== 'production') && (
+      {(preventIndexing ||
+        process.env.NEXT_PUBLIC_ENVIRONMENT !== 'production') && (
         <meta name="googlebot" content="noindex" />
       )}
     </Head>

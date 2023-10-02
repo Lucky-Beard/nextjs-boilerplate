@@ -20,28 +20,48 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Contentful CMS Integration
 
-1. Install global dependencies
+### 1. Install global dependencies (you only have to do this once)
 
 https://www.contentful.com/developers/docs/tutorials/general/get-started/
 
 Install the Gatsby CLI tool by running `npm install -g gatsby-cli`
 
-2. Run the following terminal command:
+### 2. Run the following terminal command:
 
 `npm install @contentful/rich-text-html-renderer @contentful/rich-text-react-renderer @contentful/rich-text-types contentful contentful-import`
 
-3. Create 3 .env files:
+### 3. Create the following env files with the below snipped of code snippet of code:
 
-**.env.local**
+- .env.local
+- .env.development
+- .env.production
 
-```env
+```
 NEXT_PUBLIC_CONTENTFUL_SPACE_ID=...
 NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=...
 NEXT_PUBLIC_CONTENTFUL_PREVIEW_ACCESS_TOKEN=...
 NEXT_PUBLIC_CONTENTFUL_PREVIEW_SECRET=...
 NEXT_PUBLIC_CONTENTFUL_REVAILDATE_SECRET=...
+NEXT_ENVIRONMENT=development
+NEXT_PUBLIC_ENVIRONMENT=development
 SITE_URL=http://localhost:3000
 ```
+
+- `SITE_URL` must be diffrent for **.env.development** and **.env.production**
+- `NEXT_ENVIRONMENT` and `NEXT_PUBLIC_ENVIRONMENT` must change to `production` for **.env.production** only.
+- `...` ellipses must be replaced my generated site keys from the cms. To get these:
+  - Log onto the cms. Click on **Settings"** (top right corner). It will open a menu with more options.
+  - Now click o n **API Keys** then **Add API Key**
+  - Add content promted and save. Remember the preview secret you created (you would have been promted to set one).
+  - **NEXT_PUBLIC_CONTENTFUL_PREVIEW_SECRET** and **NEXT_PUBLIC_CONTENTFUL_REVAILDATE_SECRET:** add the secret text you created previously here.
+  - **Space ID:** copy and paste this next to `NEXT_PUBLIC_CONTENTFUL_SPACE_ID`
+  - **Content Delivery API - access token:** copy and paste this next to `NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN`
+  - **Content Preview API - access token:** copy and paste this next to `NEXT_PUBLIC_CONTENTFUL_PREVIEW_ACCESS_TOKEN`
+
+### 4. Examples
+
+Slug page and overview page for slug pages: `pages/contentful-slug-demo/`
+You could also do the queries inside the api.ts file and reference them in the pages. See `exampleWithSlugQuery` inside `contentful/api.ts`
 
 ## Learn More
 
