@@ -1,17 +1,53 @@
 .container {
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 100px;
+  transition: $transition;
+  align-content: center;
+  height: $navbarHeight;
+  position: fixed;
   display: flex;
-  height: 100px;
   width: 100%;
+  z-index: 9;
+  left: 0;
+  top: 0;
 
   .nav-links {
-    column-gap: 30px;
     display: flex;
+    column-gap: 30px;
 
     .link {
       color: #fff;
+    }
+  }
+
+  &.scrolled {
+    // background-color: $blurredBackdrop;
+    backdrop-filter: blur(10px);
+    background-color: $primary;
+  }
+}
+
+.inner {
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.mobile-dropdown-open {
+  @media screen and (max-width: $laptop) {
+    > div > a {
+      z-index: 3;
+    }
+  }
+}
+
+.logo {
+  img {
+    position: relative;
+    z-index: 2;
+
+    @media screen and (max-width: $mobile) {
+      height: 40px !important;
+      width: auto !important;
     }
   }
 }

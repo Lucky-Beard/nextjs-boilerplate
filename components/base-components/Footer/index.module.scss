@@ -1,7 +1,135 @@
-.container {
-  height: 450px;
-  width: 100%;
-  position: relative;
-  margin-bottom: 0;
-  margin-top: auto;
+.footer {
+  background-color: $burstone-900;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  padding-bottom: $xlSpacing;
+  padding-top: $xlSpacing;
+  color: $stone-grey-200;
+
+  @media screen and (max-width: $mobile) {
+    padding-bottom: $xlSpacing;
+    padding-top: $xlSpacing;
+  }
+}
+
+.top {
+  justify-content: space-between;
+  display: flex;
+
+  @media screen and (max-width: $tablet) {
+    justify-content: unset;
+  }
+
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
+    gap: $mdSpacing;
+  }
+}
+
+.links-wrapper {
+  margin-left: 90px;
+
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+  flex: 1 0 0;
+
+  @media screen and (max-width: $tablet) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  @media screen and (max-width: $mobilePortrait) {
+  }
+
+  h6 {
+    color: $stone-grey-200;
+    margin: 0;
+
+    a {
+      color: $stone-grey-200;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+.links {
+  row-gap: $gridRowSpacingS;
+  align-items: flex-start;
+  display: grid;
+
+  @media screen and (max-width: $mobile) {
+    row-gap: $gridRowSpacingSx;
+    margin-bottom: 32px;
+  }
+
+  a {
+    color: $electric-blue-100;
+
+    &:hover {
+      color: $electric-blue-300;
+    }
+  }
+}
+
+.bottom {
+  justify-content: space-between;
+  margin-top: $gridColumnSpacing;
+  color: $stone-grey-200;
+  display: flex;
+
+  @media screen and (max-width: $mobile) {
+    margin-top: $lgSpacing;
+    flex-direction: column;
+    align-items: center;
+    gap: $mdSpacing;
+  }
+}
+
+.nav {
+  font-weight: 700;
+  display: flex;
+  color: inherit;
+
+  a {
+    margin-right: $lgSpacing;
+
+    @media screen and (max-width: $tablet) {
+      margin-right: $mdSpacing;
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:last-child {
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.social {
+  align-items: center;
+  gap: $mdSpacing;
+  display: flex;
+
+  @media screen and (max-width: $tablet) {
+    gap: $smSpacing;
+  }
+
+  path {
+    fill: $stone-grey-200;
+  }
+
+  a:hover path {
+    fill: $white;
+  }
 }

@@ -1,33 +1,45 @@
 import styles from './index.module.scss';
-import Image from 'next/legacy/image';
 import { useStyles } from '@/hooks/useStyles';
-interface Props {
-  // username: string;
-}
+import LogoImage from '@/assets/images/logo.svg';
+import Logo from '@/components/base-components/Logo';
+import Menu from '../Menu';
+import { useEffect, useState } from 'react';
 
-const NavBar: React.FC<Props> = (props) => {
+interface Props {}
+
+const NavBar: React.FC<Props> = () => {
+  const [colorChange, setColorchange] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const s = useStyles(styles);
+
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 100) {
+      setColorchange(true);
+    } else {
+      setColorchange(false);
+    }
+  };
+
+  const onToggleMobileMenu = (isOpen: boolean) => {
+    setOpen(isOpen);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNavbarColor, true);
+    return () => window.removeEventListener('scroll', changeNavbarColor);
+  }, []);
+
   return (
-    <div className={s('container')}>
-      <Image
-        className={s('logo')}
-        src="/vercel.svg"
-        width={72}
-        height={16}
-        alt="company logo"
-      />
-      <div className={s('nav-links')}>
-        <a href="" className={s('link')}>
-          Home
-        </a>
-        <a href="" className={s('link')}>
-          About us
-        </a>
-        <a href="" className={s('link')}>
-          Contact us
-        </a>
+    <header
+      className={`${s('container')} 
+      ${colorChange ? s('scrolled') : ''} 
+      ${open ? s('mobile-dropdown-open') : ''}`}
+    >
+      <div className={`container ${s('inner')}`}>
+        <Logo className={s('logo')} src={LogoImage} />
+        <Menu toggleMobileMenu={onToggleMobileMenu} />
       </div>
-    </div>
+    </header>
   );
 };
 

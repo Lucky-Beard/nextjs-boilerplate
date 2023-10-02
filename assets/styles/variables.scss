@@ -57,6 +57,15 @@ $vsBreakPoints: (
 /* ============ CUSTOM VARIABLES ============ */
 $blurredBackdrop: rgba($primary, 0.3);
 $transition: all 0.4s ease-in-out;
+$gridColumnSpacing: 72px;
+$gridRowSpacingS: 12px;
+$gridRowSpacingSx: 6px;
+$blur: blur(12.5px);
+$navSpacing: 28px;
+$height-default: 852px;
+$height-medium: 648px;
+$height-small: 550px;
+$circle-hero-pt: 300px;
 
 // Spacing
 $xlSpacing: 80px;

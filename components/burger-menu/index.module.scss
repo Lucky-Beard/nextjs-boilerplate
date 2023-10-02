@@ -1,0 +1,83 @@
+$bar-top: 7.5px;
+$bar-width: 24px;
+
+.responsive-menu-toggle {
+  width: $bar-width;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+
+  @media screen and (max-width: $laptop) {
+    display: block;
+  }
+}
+
+.bar {
+  padding: 0;
+  width: $bar-width;
+  height: 2px;
+  background-color: $white;
+  display: block;
+  border-radius: 2px;
+  position: absolute;
+  transition: all 0.4s ease-in-out, transform 0.4s ease-in-out 0.4s;
+}
+
+.bar1 {
+  top: 0;
+}
+
+.bar2,
+.bar3 {
+  top: $bar-top;
+}
+
+.bar3 {
+  right: 0;
+  width: 1px;
+  left: $bar-top;
+}
+
+.bar4 {
+  bottom: 0;
+  top: $bar-top;
+}
+
+.bar5 {
+  bottom: 0px;
+}
+
+.bar2 {
+  width: 0px;
+  transform: rotate(90deg);
+  left: 13.5px;
+}
+
+.menu-open {
+  .bar1 {
+    top: 13.5px;
+    background-color: transparent;
+  }
+
+  .bar2 {
+    left: 0px;
+    width: $bar-width;
+    transform: rotate(45deg);
+  }
+
+  .bar3 {
+    left: 0;
+    width: $bar-width;
+    transform: rotate(-45deg);
+  }
+
+  .bar4 {
+    background-color: transparent;
+  }
+
+  .bar5 {
+    bottom: 13.5px;
+    background-color: transparent;
+  }
+}

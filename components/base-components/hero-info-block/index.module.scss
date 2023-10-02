@@ -1,0 +1,21 @@
+.container {
+  background: $gradiant-burstone-purple-light;
+  border-radius: 0px 0px $radius 0px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  backdrop-filter: $blur;
+  padding: $lgSpacing;
+  align-self: stretch;
+  gap: $mdSpacing;
+  color: $white;
+  display: flex;
+  flex: 1 0 0;
+}
+
+.seperator {
+  background-color: $royal-purple-200;
+  display: block;
+  height: 2px;
+  width: 83px;
+}

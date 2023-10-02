@@ -159,21 +159,6 @@ html {
   scroll-behavior: smooth;
 }
 
-// Ensure form select closes on outside click
-.MuiMenu-root.MuiPopover-root.MuiModal-root {
-  height: auto !important;
-
-  .MuiBackdrop-root.MuiBackdrop-invisible.MuiModal-backdrop {
-    height: auto;
-    + div {
-      height: auto;
-      + div + div {
-        height: auto;
-      }
-    }
-  }
-}
-
 #CookiebotWidget {
   height: auto !important;
 }

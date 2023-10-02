@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  padding: 30px $lgSpacing $lgSpacing;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $mdSpacing;
+  flex: 1 0 0;
+  border-radius: 0px 0px $radius 0px;
+  background: linear-gradient(
+    161deg,
+    rgba(208, 205, 201, 0.8) -124.05%,
+    rgba(226, 224, 221, 0.8) 105.71%,
+    rgba(255, 255, 255, 0) 105.74%
+  );
+  backdrop-filter: $blur;
+  height: 100%;
+  transition: all 0.4s ease-in-out;
+  color: $burstone-800;
+  min-height: 225px;
+
+  @media screen and (max-width: $mobile) {
+    padding: $mdSpacing;
+    flex-direction: row;
+    min-height: 0;
+  }
+
+  &:hover {
+    color: $burstone-900;
+
+    img {
+      margin-right: 12px;
+    }
+
+    .text {
+      padding-left: 12px;
+    }
+  }
+
+  img {
+    align-self: flex-end;
+  }
+}
+
+.text {
+  align-items: flex-start;
+  flex-direction: column;
+  align-self: stretch;
+  line-height: 140%;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.no-hover .container:hover {
+  img {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+
+  .text {
+    padding-left: 0;
+  }
+}
+
+.file-information {
+  color: $royal-purple-500;
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.seperator {
+  background: $royal-purple-500;
+  border-radius: 50%;
+  border: none;
+  height: 5px;
+  width: 5px;
+  margin: 0;
+}
