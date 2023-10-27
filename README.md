@@ -18,6 +18,55 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## Slug pages and the sitemap
+
+`getStaticPaths` and `getStaticProps`
+
+This is useful for slug pages. Doing this will allow the build to generate all the slug urls in the sitemap.
+
+### How to implement it
+
+Open your `[slug].tsx` file (or `/slug/index.tsx`). At the very bottom of the page, below `export default yourPageName`, add the following code:
+
+```typescript
+export async function getStaticPaths() {
+  // Get all the pages instead of just the one meant for that slug
+  const response = await fetcher(`your-api-query`, true);
+
+  // Map their slug urls
+  const paths = response.map((item: any) => ({
+    params: { slug: item.slug }
+  }));
+
+  // Save / return them
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }: any) {
+  // It would be ideal to get your slug page data here and pass it to `initialData`
+  // You still need this for getStaticPaths to work
+  // It won't work without it
+  return {
+    props: { initialData: null }
+  };
+}
+```
+
+### Passing initial data to slug page
+
+This is useful for SEO purposes. All the pages get generated at runtime.
+
+```typescript
+// Where you define your page const, add the initialData response
+const PropertySlugPage: NextPageWithLayout = ({ initialData }: any) => {
+  return <>Your page data here</>;
+};
+```
+
+## GraphQL
+
+Documentatation for this coming soon
+
 ## Contentful CMS Integration
 
 ### 1. Install global dependencies (you only have to do this once)
