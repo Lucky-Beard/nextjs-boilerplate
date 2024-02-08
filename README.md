@@ -67,6 +67,10 @@ const PropertySlugPage: NextPageWithLayout = ({ initialData }: any) => {
 
 Documentatation for this coming soon
 
+### WordPress
+
+1. Install dependancies: `npm i @apollo/client client graphql`
+
 ## Contentful CMS Integration
 
 ### 1. Install global dependencies (you only have to do this once)

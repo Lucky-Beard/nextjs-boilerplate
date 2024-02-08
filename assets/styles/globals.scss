@@ -30,5 +30,8 @@ a {
 }
 
 * {
+  font-smooth: auto;
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
+  -webkit-font-smoothing: antialiased; /* WebKit  */
   box-sizing: border-box;
 }
