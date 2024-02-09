@@ -17,3 +17,11 @@
           + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
+
+@mixin ellipses($rows) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $rows;
+  -webkit-box-orient: vertical;
+}

@@ -2,6 +2,7 @@ import React, { useContext, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { AppContext } from '@/pages/_app';
 import { useEffect, useState } from 'react';
+React.useLayoutEffect = React.useEffect;
 
 // this hook allows us to use gsap within react by creating a gsap context
 // which permits the use of regular class references like .header.
