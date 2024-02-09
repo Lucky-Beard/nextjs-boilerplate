@@ -10,29 +10,31 @@ interface Props {
   children: Array<any>;
 }
 
-const FormDemo : React.FC<Props> = ({ children }) => {
-    const s = useStyles(styles);
+const FormDemo: React.FC<Props> = ({ children }) => {
+  const s = useStyles(styles);
 
-    const fields = [
-        {
-            type: 'name',
-            name: 'name',
-            placeholder: 'Name',
-            required: true,
-            label: 'Name',
-            autoComplete: 'name'
-          },{
-            type: 'email',
-            name: 'email',
-            placeholder: 'Email address',
-            required: true,
-            label: 'Email',
-            autoComplete: 'email'
-          }
-      ];
+  const fields = [
+    {
+      type: 'name',
+      name: 'name',
+      placeholder: 'Name',
+      required: true,
+      label: 'Name',
+      autoComplete: 'name'
+    },
+    {
+      type: 'email',
+      name: 'email',
+      placeholder: 'Email address',
+      required: true,
+      label: 'Email',
+      autoComplete: 'email'
+    }
+  ];
 
-    const formRender = ({ register, errors, isSubmitting }: FormProps) => {
-        return (<div className={s('form-container')}>
+  const formRender = ({ register, errors, isSubmitting }: FormProps) => {
+    return (
+      <div className={s('form-container')}>
         {fields.map((field) => {
           return (
             <React.Fragment key={field.name}>
@@ -48,16 +50,20 @@ const FormDemo : React.FC<Props> = ({ children }) => {
           );
         })}
 
-        <button
-          disabled={isSubmitting}
-        >
+        <button disabled={isSubmitting}>
           {isSubmitting ? <div> loading . . . </div> : 'Submit'}
         </button>
-      </div>);
-    };
-  return <div className={s('form-demo')}>
-    <GenericForm usePostMutation={usePostFormMutation} renderForm={formRender} />
-  </div>;
+      </div>
+    );
+  };
+  return (
+    <div className={s('form-demo')}>
+      <GenericForm
+        usePostMutation={usePostFormMutation}
+        renderForm={formRender}
+      />
+    </div>
+  );
 };
 
 export default FormDemo;
