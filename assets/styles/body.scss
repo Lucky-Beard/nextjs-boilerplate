@@ -19,7 +19,7 @@ body {
     line-height: 140%;
     font-size: $bodySizeXl;
 
-    @media screen and (max-width: $tablet) {
+    @include responsive('tablet') {
       font-size: $bodySizeL;
     }
   }
@@ -86,7 +86,7 @@ body {
 }
 
 .body-md {
-  @media screen and (max-width: $tablet) {
+  @include responsive('tablet') {
     @include body-sizes;
   }
 }

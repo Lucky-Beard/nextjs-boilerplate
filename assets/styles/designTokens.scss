@@ -39,11 +39,11 @@
 .v-spacing {
   margin-bottom: $verticalSpacing;
 
-  @media screen and (max-width: $tablet) {
+  @include responsive('tablet') {
     margin-bottom: map-get($vsBreakPoints, $tablet);
   }
 
-  @media screen and (max-width: $mobile) {
+  @include responsive('mobile') {
     margin-bottom: map-get($vsBreakPoints, $mobile);
   }
 
@@ -56,12 +56,12 @@
   margin-left: $horizontalBleeds;
   margin-right: $horizontalBleeds;
 
-  @media screen and (max-width: $tablet) {
+  @include responsive('tablet') {
     margin-left: map-get($hsBreakPoints, $tablet);
     margin-right: map-get($hsBreakPoints, $tablet);
   }
 
-  @media screen and (max-width: $mobile) {
+  @include responsive('mobile') {
     margin-left: map-get($hsBreakPoints, $mobile);
     margin-right: map-get($hsBreakPoints, $mobile);
   }
@@ -77,12 +77,12 @@
   padding-left: $horizontalBleeds;
   padding-right: $horizontalBleeds;
 
-  @media screen and (max-width: $tablet) {
+  @include responsive('tablet') {
     padding-left: map-get($hsBreakPoints, $tablet);
     padding-right: map-get($hsBreakPoints, $tablet);
   }
 
-  @media screen and (max-width: $mobile) {
+  @include responsive('mobile') {
     padding-left: map-get($hsBreakPoints, $mobile);
     padding-right: map-get($hsBreakPoints, $mobile);
   }

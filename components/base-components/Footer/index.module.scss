@@ -7,7 +7,7 @@
   padding-top: $xlSpacing;
   color: $stone-grey-200;
 
-  @media screen and (max-width: $mobile) {
+  @include responsive('mobile') {
     padding-bottom: $xlSpacing;
     padding-top: $xlSpacing;
   }
@@ -17,11 +17,11 @@
   justify-content: space-between;
   display: flex;
 
-  @media screen and (max-width: $tablet) {
+  @include responsive('tablet') {
     justify-content: unset;
   }
 
-  @media screen and (max-width: $mobile) {
+  @include responsive('mobile') {
     flex-direction: column;
     gap: $mdSpacing;
   }
@@ -35,11 +35,11 @@
   display: flex;
   flex: 1 0 0;
 
-  @media screen and (max-width: $tablet) {
+  @include responsive('tablet') {
     width: 100%;
   }
 
-  @media screen and (max-width: $mobile) {
+  @include responsive('mobile') {
     flex-direction: column;
     margin-left: 0;
   }
@@ -66,7 +66,7 @@
   align-items: flex-start;
   display: grid;
 
-  @media screen and (max-width: $mobile) {
+  @include responsive('mobile') {
     row-gap: $gridRowSpacingSx;
     margin-bottom: 32px;
   }
@@ -86,7 +86,7 @@
   color: $stone-grey-200;
   display: flex;
 
-  @media screen and (max-width: $mobile) {
+  @include responsive('mobile') {
     margin-top: $lgSpacing;
     flex-direction: column;
     align-items: center;
@@ -102,7 +102,7 @@
   a {
     margin-right: $lgSpacing;
 
-    @media screen and (max-width: $tablet) {
+    @include responsive('tablet') {
       margin-right: $mdSpacing;
     }
 
@@ -121,7 +121,7 @@
   gap: $mdSpacing;
   display: flex;
 
-  @media screen and (max-width: $tablet) {
+  @include responsive('tablet') {
     gap: $smSpacing;
   }
 

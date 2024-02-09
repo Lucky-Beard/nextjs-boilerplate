@@ -68,7 +68,7 @@ $titleSizeSx: $titleSizeIncrements * 2;
 
 // className="title-md-s"
 .title-md {
-  @media screen and (max-width: $tablet) {
+  @include responsive('tablet') {
     @include titles;
   }
 }

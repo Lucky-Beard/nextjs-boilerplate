@@ -12,7 +12,7 @@
   }
 
   .fullscreen-padded {
-    @media (max-width: $desktop) {
+    @include responsive('desktop') {
       padding-right: 0;
       padding-left: 0;
     }
@@ -69,7 +69,7 @@ $padded-container: $mdSpacing + $xxsSpacing;
   margin-right: -50vw;
   left: 50%;
 
-  @media (max-width: $desktop) {
+  @include responsive('desktop') {
     padding-right: $mobileBleeds;
 
     .container {
@@ -83,7 +83,7 @@ $padded-container: $mdSpacing + $xxsSpacing;
   margin-left: -50vw;
   right: 50%;
 
-  @media (max-width: $desktop) {
+  @include responsive('desktop') {
     padding-left: $mobileBleeds;
 
     .container {

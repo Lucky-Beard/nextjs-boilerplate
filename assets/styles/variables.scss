@@ -35,6 +35,16 @@ $desktop: $maxWidth;
 $desktopLarge: 1440px;
 $desktopExtraLarge: 1920px;
 
+$breakpoints: (
+  'mobilePortrait': $mobilePortrait,
+  'mobile': $mobile,
+  'tablet': $tablet,
+  'laptop': $laptop,
+  'desktop': $maxWidth,
+  'desktopL': $desktopLarge,
+  'desktopXL': $desktopExtraLarge
+);
+
 /* ======== Sectional Spacing ======== */
 $hsBreakPoints: (
   $mobilePortrait: 20px,

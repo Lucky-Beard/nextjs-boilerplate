@@ -1,0 +1,19 @@
+@mixin responsive($breakpoint, $min: 'max') {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if $min == 'min' {
+      @media screen and (min-width: (map-get($breakpoints, $breakpoint) + 1)) {
+        @content;
+      }
+    } @else {
+      @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
