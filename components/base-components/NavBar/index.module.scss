@@ -19,35 +19,6 @@
   }
 
   &.scrolled {
-    // background-color: $blurredBackdrop;
-    backdrop-filter: blur(10px);
     background-color: $primary;
-  }
-}
-
-.inner {
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
-  display: flex;
-}
-
-.mobile-dropdown-open {
-  @media screen and (max-width: $laptop) {
-    > div > a {
-      z-index: 3;
-    }
-  }
-}
-
-.logo {
-  img {
-    position: relative;
-    z-index: 2;
-
-    @media screen and (max-width: $mobile) {
-      height: 40px !important;
-      width: auto !important;
-    }
   }
 }

@@ -13,4 +13,5 @@ const nextConfig = {
     prependData: prependData.join('')
   }
 };
+
 module.exports = nextConfig;
