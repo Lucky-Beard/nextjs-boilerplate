@@ -2,14 +2,12 @@ import { NextPageWithLayout } from './_app';
 import SEOHead from '../components/SEOHead';
 import Image from 'next/legacy/image';
 import styles from './index.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store/store';
 import { useAppSelector, useInterval, useAppDispatch } from '../hooks';
 import { selectLoading, setLoading } from '../store/example';
 import { useGetPokemonByNameQuery } from '../services/pokemon';
 import Layout from '../layouts/default';
 import { useStyles } from '@/hooks/useStyles';
-import Container from '@/components/container';
+
 const Home: NextPageWithLayout = () => {
   const { data, error, isLoading } = useGetPokemonByNameQuery('staryu');
   const s = useStyles(styles);
