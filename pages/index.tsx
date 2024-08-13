@@ -9,6 +9,7 @@ import { selectLoading, setLoading } from '../store/example';
 import { useGetPokemonByNameQuery } from '../services/pokemon';
 import Layout from '../layouts/default';
 import { useStyles } from '@/hooks/useStyles';
+import Container from '@/components/container';
 const Home: NextPageWithLayout = () => {
   const { data, error, isLoading } = useGetPokemonByNameQuery('staryu');
   const s = useStyles(styles);

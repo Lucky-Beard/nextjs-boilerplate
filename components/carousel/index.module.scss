@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    gap: 16px;
+
+    > div {
+        transition: all 0.2s linear;
+        background-color: #cdcdcd;
+        border-radius: 12px;
+        text-align: center;
+        font-size: 2rem;
+        padding: 12px;
+    }
+}
+
+.size-3 {
+    > div {
+        min-width: calc((100% - 32px) / 3);
+    }
+}
+
+.size-4 {
+    > div {
+        min-width: calc((100% - 48px) / 4);
+    }
+}
